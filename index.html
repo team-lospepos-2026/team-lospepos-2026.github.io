@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HennaFast</title>
+    <meta name="description" content="Ofrezca coloración natural en 60 minutos: aumente ingresos y atraiga clientas premium con HennaFast. Pida demo." />
+    
+    <!-- Preconnect for external fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%232F6B3A'/><path d='M16 8 L10 24 L22 24 Z' fill='white'/></svg>" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo" aria-label="HennaFast">
+                <img src="assets/images/logo.png" alt="HennaFast Logo" class="header__logo-img" />
+                <span class="header__logo-text">HennaFast</span>
+            </div>
+            
+            <button class="header__menu-toggle" aria-label="Abrir menú">
+                <span aria-hidden="true">☰</span>
+            </button>
+            
+            <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+                <a href="#beneficios" class="header__nav-link">Beneficios</a>
+                <a href="#como-funciona" class="header__nav-link">Cómo Funciona</a>
+                <a href="#roi-calculator" class="header__nav-link">ROI</a>
+                <a href="#faq" class="header__nav-link">FAQ</a>
+                <a href="#contacto" class="btn btn-primary header__nav-cta">Solicitar información</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="section hero" role="main">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">Convierta la coloración natural en su servicio más rentable.</h1>
+                <h2 class="hero__subtitle">Deje de perder rentabilidad con servicios de henna de 4 horas. Con HennaFast, ofrezca un tratamiento natural premium en el tiempo de un servicio tradicional.</h2>
+                
+                <div class="hero__cta-container">
+                    <button class="btn btn-primary hero__cta" data-scroll-to="#contacto">Solicitar información</button>
+                </div>
+            </div>
+            
+            <div class="hero__image">
+                <video src="assets/images/test.mp4" class="hero__video" autoplay loop muted playsinline preload="auto"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="section social-proof">
+        <div class="container">
+            <h2 class="social-proof__title">Salones líderes ya confían en la innovación</h2>
+            <div class="social-proof__grid">
+                <div class="social-proof__item">
+                    <div class="social-proof__logo">
+                        <img src="assets/images/logo-roho.png" alt="Roho Peluquerías" loading="lazy" />
+                    </div>
+                    <p class="social-proof__quote">"Un antes y un después para nuestro servicio de coloración natural." - Roho Peluquerías</p>
+                </div>
+                <div class="social-proof__item">
+                    <div class="social-proof__logo">
+                        <img src="assets/images/cerini.png" alt="Salón Cerini" loading="lazy" />
+                    </div>
+                    <p class="social-proof__quote">"El ROI fue evidente desde el primer mes. Indispensable." - Salón Cerini</p>
+                </div>
+                <div class="social-proof__item">
+                    <div class="social-proof__logo">
+                        <img src="assets/images/prana.jpeg" alt="Salón Ejemplo" loading="lazy" />
+                    </div>
+                    <p class="social-proof__quote">"Aumentamos nuestra facturación un 35% en servicios naturales." - Prana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roi-calculator" class="roi-section">
+    <div class="container">
+        <div class="roi-header">
+            <h2>Proyectá tu Rentabilidad</h2>
+            <p>El método tradicional bloquea tu sillón por 3 horas. Mirá lo que pasa cuando reducís ese tiempo a 1 hora.</p>
+        </div>
+
+        <div class="roi-dashboard">
+            <div class="roi-card inputs-card">
+                <h3>1. Datos de tu Salón</h3>
+                
+                <div class="input-group">
+                    <label>Precio de tu servicio de Henna ($)</label>
+                    <div class="input-wrapper">
+                        <span>$</span>
+                        <input type="number" id="service-price" value="65000" step="500">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Promedio de clientes Henna por semana</label>
+                    <input type="range" id="clients-range" min="1" max="50" value="5" class="slider">
+                    <div class="range-value">
+                        <span id="clients-display">5</span> clientes/semana
+                    </div>
+                </div>
+
+                <div class="logic-explainer">
+                    <small>
+                        <strong>La Lógica:</strong> Hoy, atender a estos clientes te toma aprox. <span id="hours-spent">15</span> horas de sillón ocupado. Con HennaFast, bajás a <span id="hours-saved">5</span> horas.
+                    </small>
+                </div>
+            </div>
+
+            <div class="roi-card results-card">
+                <h3>2. Tu Potencial Mensual</h3>
+
+                <div class="result-row">
+                    <div class="result-label">
+                        <span>Facturación Actual</span>
+                        <small>Con ocupación de 3hs por turno</small>
+                    </div>
+                    <div class="result-value current">
+                        <span id="current-revenue">$1.300.000</span>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="result-row highlight">
+                    <div class="result-label">
+                        <span>Proyección HennaFast</span>
+                        <small>Ocupando el tiempo liberado con 1 turno extra*</small>
+                    </div>
+                    <div class="result-value potential">
+                        <span id="potential-revenue">$2.600.000</span>
+                    </div>
+                </div>
+
+                <div class="extra-gain-box">
+                    <span>Ingreso Extra Estimado</span>
+                    <strong id="extra-revenue">+ $1.300.000</strong>
+                    <small>/mes</small>
+                </div>
+            </div>
+        </div>
+        
+        <p class="disclaimer">*El cálculo asume una ocupación conservadora del 50% del tiempo ahorrado.</p>
+    </div>
+</section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="section benefits">
+        <div class="container">
+            <div class="benefits__grid">
+                <article class="benefit-card">
+                    <div class="benefit-card__icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-card__title">Aumente su facturación</h3>
+                    <p class="benefit-card__description">Reduzca el tiempo de servicio de 4 horas a solo 60 minutos. Atienda hasta 3 clientas más por día en una misma silla.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-card__icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                            <line x1="16" y1="8" x2="2" y2="22" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-card__title">Atraiga nuevas clientas</h3>
+                    <p class="benefit-card__description">Capture al 75% del mercado premium que busca activamente opciones naturales y éticas.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-card__icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-card__title">Diferénciese con tecnología</h3>
+                    <p class="benefit-card__description">Ofrezca un servicio exclusivo que su competencia no tiene.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="como-funciona" class="section how-it-works">
+        <div class="container">
+            <h2 class="section-title">Tecnología de Vanguardia, Uso Simple en 3 Pasos</h2>
+            <div class="steps__grid">
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <div class="step-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                        </svg>
+                    </div>
+                    <h3 class="step-card__title">Aplicar</h3>
+                    <p class="step-card__description">El estilista aplica la pasta de henna como siempre.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <div class="step-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="2" x2="12" y2="4" />
+                            <line x1="12" y1="20" x2="12" y2="22" />
+                            <line x1="2" y1="12" x2="4" y2="12" />
+                            <line x1="20" y1="12" x2="22" y2="12" />
+                        </svg>
+                    </div>
+                    <h3 class="step-card__title">Acelerar</h3>
+                    <p class="step-card__description">Se coloca el casco HennaFast por 10-15 minutos.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <div class="step-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+                            <polygon points="18 2 22 6 12 16 8 16 8 12 18 2" />
+                        </svg>
+                    </div>
+                    <h3 class="step-card__title">Revelar</h3>
+                    <p class="step-card__description">Se retira el producto y se finaliza el peinado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq__items">
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false">
+                        ¿Es seguro para todo tipo de cabello?
+                        <span class="faq__toggle" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Sí, HennaFast está diseñado para trabajar con todos los tipos de cabello. El sistema de calor controlado acelera el proceso natural sin dañar la fibra capilar. Recomendamos realizar una prueba de mechón como con cualquier servicio de coloración.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false">
+                        ¿Qué garantía tiene el equipo?
+                        <span class="faq__toggle" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>El casco HennaFast incluye 2 años de garantía completa contra defectos de fabricación. Además, ofrecemos servicio técnico especializado y reemplazo express en caso de ser necesario para que nunca deje de ofrecer el servicio.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false">
+                        ¿Necesita mantenimiento especial?
+                        <span class="faq__toggle" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>El mantenimiento es mínimo. Solo requiere limpieza regular con productos suaves y una revisión técnica anual que puede realizarse en el mismo salón. Incluimos protocolo de cuidado y kit de limpieza con cada unidad.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false">
+                        ¿Incluyen capacitación?
+                        <span class="faq__toggle" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Sí, cada compra incluye capacitación completa para todo su equipo. Realizamos una jornada de entrenamiento en su salón y proporcionamos certificación oficial HennaFast que agrega valor a su servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="contact__header">
+                <h2 class="section-title">Sea pionero en la revolución de la belleza natural</h2>
+                <p class="contact__subtitle">Deje sus datos y nuestro equipo se pondrá en contacto para coordinar una demostración sin costo y sin compromiso en su propio salón.</p>
+            </div>
+            
+            <form class="contact__form" id="demo-form" action="/api/contact" method="POST">
+                <div class="form__grid">
+                    <div class="form__group">
+                        <label for="fullname">Nombre y apellido *</label>
+                        <input type="text" id="fullname" name="fullname" required aria-required="true" />
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="salon">Nombre del salón *</label>
+                        <input type="text" id="salon" name="salon" required aria-required="true" />
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required aria-required="true" />
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="phone">Teléfono *</label>
+                        <input type="tel" id="phone" name="phone" required aria-required="true" />
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary form__submit" aria-label="Enviar solicitud de demo">
+                    Solicitar demo gratuita
+                </button>
+                
+                <div class="form__message" id="form-message" role="alert" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">HennaFast</div>
+                    <p>Tecnología innovadora para la coloración natural profesional.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Enlaces</h3>
+                    <nav class="footer__nav">
+                        <a href="#beneficios">Beneficios</a>
+                        <a href="#como-funciona">Cómo Funciona</a>
+                        <a href="#roi">ROI</a>
+                        <a href="#contacto">Contacto</a>
+                    </nav>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Síguenos</h3>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Instagram" rel="noopener noreferrer">Instagram</a>
+                        <a href="#" aria-label="LinkedIn" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p style="color: rgba(255, 255, 255, 0.781);">&copy; 2025 HennaFast. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
