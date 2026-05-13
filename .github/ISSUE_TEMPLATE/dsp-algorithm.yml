@@ -1,0 +1,33 @@
+name: DSP Function Implementation
+description: For implementing a DSP function in core/dsp/
+body:
+  - type: input
+    id: function_name
+    attributes:
+      label: Function name and file (e.g. moving_average in filters.py)
+    validations:
+      required: true
+  - type: textarea
+    id: math
+    attributes:
+      label: Mathematical definition (LaTeX encouraged)
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Acceptance criteria
+      description: List the test names that must pass
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Reference
+      description: Section of the TP document this corresponds to
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for the implementer
